@@ -6,7 +6,7 @@ from django.views import generic
 from .models import Group, GroupMember
 
 
-class CreateGroup(LoginRequiredMixin, PermissionRequiredMixin):
+class CreateGroup(LoginRequiredMixin, PermissionRequiredMixin, generic.CreateView):
     fields = ('name', 'description')
     model = Group
 
