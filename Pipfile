@@ -8,6 +8,7 @@ django = "*"
 django-environ = "*"
 django-bootstrap-v5 = "*"
 misaka = "*"
+django-braces = "*"
 
 [dev-packages]
 
