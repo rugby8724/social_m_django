@@ -11,14 +11,23 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'home' %}">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Recipes</a>
-                </li>
                 {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'posts:create' %}">Post</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'groups:all' %}">Groups</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'groups:create' %}">Create Group</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
                 </li>
                 {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'groups:all' %}">Groups</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
                 </li>

@@ -1,4 +1,4 @@
-{% extends 'groups/group_base.html %}
+{% extends 'groups/group_base.html' %}
 {% block pregroup %}
 
 <h1>{{group.name}}</h1>
@@ -8,14 +8,12 @@
     {% if user in group.members.all %}
     <a href="{% url 'groups:leave' slug=group.slug %}"
         class="btn btn-lg btn-fill btn-warning">
-        <span>'glyphicon glyphicon-remove-circle'</span>
-        Leave Group
+        <span class='glyphicon glyphicon-remove-circle'>Leave Group</span>
     </a>
     {% else %}
     <a href="{% url 'groups:join' slug=group.slug %}"
         class="btn btn-lg btn-fill btn-success">
-        <span>'glyphicon glyphicon-ok-circle'</span>
-        Join Group
+        <span class='glyphicon glyphicon-ok-circle'>Join Group</span>
     </a>
     {% endif %}
 </div>
@@ -29,7 +27,8 @@
     {% else %}
         {% for post in group.posts.all %}
         {% include 'posts/_post.html' %}
+        {% endfor %}
     {% endif %}
 
 </div>
-{% end block %}
+{% endblock %}
